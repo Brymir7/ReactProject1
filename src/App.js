@@ -36,6 +36,12 @@ function App() {
     })
     setNotes(updatedNotesArray);
   }
+  const changeTheme = (theme1, theme2, theme3) => {
+    var root = document.querySelector(':root');
+    root.style.setProperty('--themegreen1', theme1);
+    root.style.setProperty('--themegreen2', theme2);
+    root.style.setProperty('--themegreen3', theme3);
+  }
   return (
     <div className="app">
      <Sidebar
@@ -45,7 +51,9 @@ function App() {
        activeNote = {activeNote}
        setActiveNote={setActiveNote}
      />
-     <Main activeNote={getActiveNote()} onUpdateNote={onUpdateNote}/>
+     <Main activeNote={getActiveNote()} onUpdateNote={onUpdateNote}
+       changeTheme={changeTheme}
+     />
     </div>
   );
 }
