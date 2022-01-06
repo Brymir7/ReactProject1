@@ -8,26 +8,35 @@ function Main({ activeNote, onUpdateNote, changeTheme }) {
             lastModified: Date.now(),
         })
     }
+    const showNavBar = () => {
+        const navbar = document.getElementById('main-navbar');
+        navbar.classList.add('active');
+    }
+    const changeTheme1= (theme1, theme2, theme3) => {
+        changeTheme(theme1,theme2,theme3);
+        const navbar = document.getElementById('main-navbar');
+        navbar.classList.remove('active');
+    }
     if (!activeNote) return (
         <div className="no-note">
             <div className="app-main-no-note">No note selected</div>
-            <button>X</button>
-            <div className="app-main-navigation-bar">
-                <button onClick={() => changeTheme('#000000', '#000000', '#000000')} className="app-main-theme-button-one">Theme one</button>
-                <button onClick={() => changeTheme('#000000', '#000000', '#000000')} className="app-main-theme-button-one">Theme one</button>
-                <button onClick={() => changeTheme('#000000', '#000000', '#000000')} className="app-main-theme-button-one">Theme one</button>
-                <button onClick={() => changeTheme('#000000', '#000000', '#000000')} className="app-main-theme-button-one">Theme one</button>
+            <button onClick={showNavBar}>X</button>
+            <div id="main-navbar" className="app-main-navigation-bar">
+                <button onClick={() => changeTheme1('#000000', '#000000', '#000000')} className="app-main-theme-button-one">Theme one</button>
+                <button onClick={() => changeTheme1('#000000', '#000000', '#000000')} className="app-main-theme-button-one">Theme one</button>
+                <button onClick={() => changeTheme1('#000000', '#000000', '#000000')} className="app-main-theme-button-one">Theme one</button>
+                <button onClick={() => changeTheme1('#000000', '#000000', '#000000')} className="app-main-theme-button-one">Theme one</button>
             </div>
         </div>
     )
     return (
         <div className="app-main">
-            <button className="app-main-theme-button">X</button>
-            <div className="app-main-navigation-bar">
-                <button onClick={() => changeTheme('#000000', '#000000', '#000000')} className="app-main-theme-button-one">Theme one</button>
-                <button onClick={() => changeTheme('#000000', '#000000', '#000000')} className="app-main-theme-button-one">Theme one</button>
-                <button onClick={() => changeTheme('#000000', '#000000', '#000000')} className="app-main-theme-button-one">Theme one</button>
-                <button onClick={() => changeTheme('#000000', '#000000', '#000000')} className="app-main-theme-button-one">Theme one</button>
+            <button onClick={showNavBar} className="app-main-theme-button">X</button>
+            <div id="main-navbar" className="app-main-navigation-bar">
+                <button onClick={() => changeTheme1('#000000', '#000000', '#000000')} className="app-main-theme-button-one">Theme one</button>
+                <button onClick={() => changeTheme1('#000000', '#000000', '#000000')} className="app-main-theme-button-one">Theme one</button>
+                <button onClick={() => changeTheme1('#000000', '#000000', '#000000')} className="app-main-theme-button-one">Theme one</button>
+                <button onClick={() => changeTheme1('#000000', '#000000', '#000000')} className="app-main-theme-button-one">Theme one</button>
             </div>
             <div className="app-main-edit">
                 <input
