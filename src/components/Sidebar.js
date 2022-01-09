@@ -1,4 +1,4 @@
-import SimpleBar from "simplebar-react";
+
 function Sidebar ({notes, onAddNote, onDeleteNote, activeNote, setActiveNote}) {
     const sortedNotes = notes.sort((a, b) => b.lastModified - a.lastModified)
     return(
@@ -8,11 +8,11 @@ function Sidebar ({notes, onAddNote, onDeleteNote, activeNote, setActiveNote}) {
             <button className="Add-button" onClick={onAddNote}> Add </button>
        </div>
         <div className="app-sidebar-notes">
-        <SimpleBar>
+    
         {sortedNotes.map((note)=> (
             <div className={`app-sidebar-note ${note.id === activeNote && "active"}`} onClick={()=> {setActiveNote(note.id)}}>
                 <div className="app-sidebar-title">
-                    <h5>{note.title}</h5>
+                    <h5>{note.title && note.title.substr(0,35) + "."}</h5>
                     <button className="Delete-button" onClick={()=> onDeleteNote(note.id)}> Delete</button>
                 </div>
                 <div className="app-sidebar-content">
@@ -24,7 +24,7 @@ function Sidebar ({notes, onAddNote, onDeleteNote, activeNote, setActiveNote}) {
                 </div>
             </div>
             ))}
-            </SimpleBar> 
+            
         </div>
     </div>
     )

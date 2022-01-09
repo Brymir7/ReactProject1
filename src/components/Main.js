@@ -12,22 +12,15 @@ function Main({ activeNote, onUpdateNote, changeTheme }) {
         const navbar = document.getElementById('main-navbar');
         navbar.classList.add('active');
     }
-    const changeTheme1= (theme1, theme2, theme3) => {
-        changeTheme(theme1,theme2,theme3);
+    const changeTheme1 = (theme1, theme2, theme3) => {
+        changeTheme(theme1, theme2, theme3);
         const navbar = document.getElementById('main-navbar');
         navbar.classList.remove('active');
     }
     if (!activeNote) return (
-        <div className="no-note">
-            <div className="app-main-no-note">No note selected</div>
-            <button onClick={showNavBar}>X</button>
-            <div id="main-navbar" className="app-main-navigation-bar">
-                <button onClick={() => changeTheme1('#000000', '#000000', '#000000')} className="app-main-theme-button-one">Theme one</button>
-                <button onClick={() => changeTheme1('#000000', '#000000', '#000000')} className="app-main-theme-button-one">Theme one</button>
-                <button onClick={() => changeTheme1('#000000', '#000000', '#000000')} className="app-main-theme-button-one">Theme one</button>
-                <button onClick={() => changeTheme1('#000000', '#000000', '#000000')} className="app-main-theme-button-one">Theme one</button>
-            </div>
-        </div>
+
+        <div className="app-main-no-note">No note selected</div>
+
     )
     return (
         <div className="app-main">

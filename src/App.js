@@ -16,7 +16,7 @@ function App() {
     const newNote = {
       id: nanoid(),
       title: "Undefined Title",
-      body: "Empty",
+      body: "",
       lastModified: Date.now(),
     }
     setNotes([newNote, ...notes]);
@@ -37,7 +37,7 @@ function App() {
     setNotes(updatedNotesArray);
   }
   const changeTheme = (theme1, theme2, theme3) => {
-    var root = document.querySelector(':root');
+    let root = document.documentElement;
     root.style.setProperty('--themegreen1', theme1);
     root.style.setProperty('--themegreen2', theme2);
     root.style.setProperty('--themegreen3', theme3);
